@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="css\table.css"/>
+
+<script>
+    $.getJSON("https://webtechcars.herokuapp.com/api/cars", function (data) {
+        let table = $('<table>');
+
+        $(table)
+            .attr('id', 'cars')
+            .append(
+                $('<tr>').append(
+                    $('<th>').text("Name"),
+                    $('<th>').text("Consumption"),
+                    $('<th>').text("Color"),
+                    $('<th>').text("Manufacturer"),
+                    $('<th>').text("Year"),
+                    $('<th>').text("Available"),
+                    $('<th>').text("Horsepower")
+                ));
+
+        $.each(data, function (key, value) {
+            let tr = $('<tr>').append(
+                //$('<td>').text(value.name),
+                $('<td>').html(value.name + "<i class=\"fas fa-times cross\" onclick='deleteCar(\"" + value._id + "\", \"" + value.name + "\")'></i>"),
+                $('<td>').text(value.consumption),
+                $('<td>').text(value.color),
+                $('<td>').text(value.manufacturer),
+                $('<td>').text(value.year),
+                $('<td>').text(value.avaiable),
+                $('<td>').text(value.horsepower)
+            );
+            $(table).append(tr);
+        });
+
+        $("#content").append(table);
+    });
+</script>
+</html>

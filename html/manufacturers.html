@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="css\table.css"/>
+
+<!--
+"name": req.body.name,
+"country": req.body.country,
+"founded": req.body.founded
+-->
+
+<script>
+    $.getJSON("https://webtechcars.herokuapp.com/api/manufacturers", function (data) {
+
+        let table = $('<table>');
+
+        $(table)
+            .attr('id', 'manufacturers')
+            .append(
+                $('<tr>').append(
+                    $('<th>').text("Name"),
+                    $('<th>').text("Country"),
+                    $('<th>').text("Founded")
+                )
+            );
+
+        $.each(data, function (key, value) {
+            let tr = $('<tr>').append(
+                //$('<td>').html(value.name + $('i').addClass("fas fa-times cross")),
+                $('<td>').html(value.name + "<i class=\"fas fa-times cross\" onclick='deleteManufacturer(\"" + value._id + "\", \"" + value.name + "\")'></i>"),
+                $('<td>').text(value.country),
+                $('<td>').text(value.founded)
+            );
+            $(table).append(tr);
+        });
+
+
+        $("#content").append(table);
+    });
+</script>
+</html>

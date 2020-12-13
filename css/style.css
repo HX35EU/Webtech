@@ -1,0 +1,86 @@
+body {
+    width: 80%;
+    margin: auto;
+    margin-bottom: 50px;
+    background-color: #eff2f9; /* cream */
+    font-family: Roboto;
+    padding: 1em;
+}
+
+#header {
+    text-align: center;
+    padding-top: 50px;
+}
+
+#marquee{
+    position: relative;
+    top:155px;
+    margin-top: -100px;
+}
+
+#banner {
+    border-style: solid;
+    border-width: 5px;
+    border-color: rgba(0, 0, 0, 0.5);
+    background-color: transparent;
+    color: black;
+    font-size: 64px;
+    padding: 30px 0px;
+    font-weight: bold;
+    border-radius: 80px 80px 0px 0px;
+    min-width: 300px;
+}
+
+#menubar {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 24px;
+    padding-bottom: 15px;
+}
+
+#menubar .menuButton {
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    border-radius: 10px 10px 0px 0px;
+}
+
+#menubar .menuButton:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #4386ff;
+    font-weight: bold;
+    transition-duration: 0.5s;
+}
+
+#menubar .menuButton.active {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #4386ff;
+    transition-duration: 0.5s;
+}
+
+#content {
+    text-align: justify;
+    padding: 10px;
+}
+
+table {
+    margin: auto;
+    width: 100%;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.cross{
+    float:right;
+    font-size: 12pt;
+    color: red;
+    padding-right: 20px;
+    cursor: pointer;
+}

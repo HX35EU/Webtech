@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="css\form.css"/>
+
+<form id="cars" action="addCar">
+    <table>
+        <tr>
+            <td>
+                Name:
+            </td>
+            <td>
+                <input type="text" name="name" required autofocus placeholder="Fiesta">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Consumption:
+            </td>
+            <td>
+                <input type="number" name="consumption" required min="1" placeholder="8">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Color:
+            </td>
+            <td>
+                <input type="text" name="color" required placeholder="red">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Manufacturer:
+            </td>
+            <td>
+                <select id="manufacturer" name="manufacturer"></select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Year:
+            </td>
+            <td>
+                <input type="number" name="year" required min="1800" placeholder="1989">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Available:
+            </td>
+            <td>
+                <input type="number" name="avaiable" required min="1" placeholder="5">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Horsepower:
+            </td>
+            <td>
+                <input type="number" name="horsepower" required min="1" placeholder="80">
+            </td>
+        </tr>
+        <tr>
+            <td id="submit" colspan="2">
+                <input type="submit" name="submit" onclick="submitCar()" value="Add Car">
+            </td>
+        </tr>
+    </table>
+
+</form>
+
+<script>
+    loadManufacturers();
+</script>
+
+</html>
